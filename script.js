@@ -2,7 +2,7 @@ const cameraScreen = document.getElementById('cameraScreen');
 const loadingScreen = document.getElementById('loadingScreen');
 const falScreen = document.getElementById('falScreen');
 const video = document.getElementById('video');
-const placeholderImg = document.getElementById('placeholderImg');
+
 const captureBtn = document.getElementById('captureBtn');
 const photosPreview = document.getElementById('photosPreview');
 const falYorum = document.getElementById('falYorum');
@@ -19,17 +19,22 @@ if ('serviceWorker' in navigator) {
 
 // Kamera başlat
 function startCamera() {
+  // Arka kamera öncelikli
   navigator.mediaDevices.getUserMedia({
-    video: { facingMode: { exact: "environment" } }
+    video: { facingMode: "environment" } // environment = arka kamera
   })
   .then(stream => {
     video.srcObject = stream;
-    placeholderImg.style.display = 'none';
+    video.play();
   })
   .catch(err => {
     console.log("Arka kamera açılırken hata:", err);
+    // Fallback: ön kamera
     navigator.mediaDevices.getUserMedia({ video: true })
-      .then(stream => { video.srcObject = stream; placeholderImg.style.display = 'none'; });
+      .then(stream => {
+        video.srcObject = stream;
+        video.play();
+      });
   });
 }
 
@@ -38,7 +43,6 @@ function resetCamera() {
   photos = [];
   photosPreview.innerHTML = '';
   captureBtn.disabled = false;
-  placeholderImg.style.display = 'block';
   startCamera();
 }
 
