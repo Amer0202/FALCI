@@ -14,7 +14,10 @@
   <!-- Kamera / Fotoğraf Bölümü -->
   <div id="cameraScreen" class="screen active">
     <h2>Sebiha, fincanını çek!</h2>
-    <video id="video" autoplay></video>
+    <div class="video-container">
+      <img id="placeholderImg" src="assets/placeholder.jpg" alt="Fincan placeholder">
+      <video id="video" autoplay></video>
+    </div>
     <button id="captureBtn">Fotoğraf Çek</button>
     <div id="photosPreview"></div>
   </div>
@@ -27,7 +30,7 @@
 
   <!-- Fal Sonucu -->
   <div id="falScreen" class="screen">
-    <h2>Falın</h2>
+    <h2><img src="assets/icons/fincan.png" alt="Fincan İkonu" class="fincan-icon"> Falın</h2>
     <div id="falYorum"></div>
     <button id="backBtn">Geri</button>
   </div>
