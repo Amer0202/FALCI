@@ -45,5 +45,11 @@ const falParagraflari = [
 "Telvede görülen ışık ve gölge oyunları, hayatındaki belirsizliklerin aydınlanacağını ve önemli kararlar alacağını gösteriyor.",
 "Fincandaki küçük noktalar ve çizgiler, önümüzdeki günlerde hem keyifli hem de dikkat gerektiren gelişmeler yaşayacağını işaret ediyor.",
 "Telvede beliren yoğun çizgiler, sağlık ve enerji konularında dikkat etmeni anlatıyor. Küçük sürprizler seni mutlu edebilir.",
-"Fincan kenarındaki zigzag ve dairesel şekiller, iş ve özel hayatında sabır ve dikkat gerektiren durumlar için mesaj veriyor."
+"Fincan kenarındaki zigzag ve dairesel şekiller, iş ve özel hayatında sabır ve dikkat gerektiren durumlar için mesaj veriyor.",
+ "Kahve fincanında beliren şekiller, önümüzdeki günlerde önemli bir fırsatın kapıda olduğunu gösteriyor...",
+  "Sağlık konusunda dikkatli olman gereken bir dönemdesin; özellikle beslenmene ve uyku düzenine önem ver...",
+  "Ailenle ilgili bazı gizli gelişmeler ortaya çıkabilir, sabırlı ol ve her şeyi sakin karşıla...",
+  "Maddi konularda sürpriz kazançlar söz konusu; acele kararlar yerine planlı hareket etmen faydalı...",
+  "İlişkilerinde daha çok empati ve anlayış ön planda olacak, karşılıklı konuşmalar önemli rol oynayacak...",
+  "Yakın bir arkadaşın beklenmedik bir destek sunabilir, sürpriz teklif veya davetlere açık ol...",
 ];
