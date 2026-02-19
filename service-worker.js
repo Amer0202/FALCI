@@ -1,20 +1,23 @@
-const CACHE_NAME = 'falciana-cache-v1';
+const CACHE_NAME = "falci-cache-v1";
 const urlsToCache = [
-  './index.html',
-  './style.css',
-  './app.js',
-  './manifest.json',
-  './assets/icon.png'
+  "./index.html",
+  "./style.css",
+  "./script.js",
+  "./falParagraflari.js",
+  "./assets/icons/fincan.png",
+  "./assets/placeholder.jpg"
 ];
 
-self.addEventListener('install', e => {
-  e.waitUntil(
-    caches.open(CACHE_NAME).then(cache => cache.addAll(urlsToCache))
+self.addEventListener("install", (event) => {
+  event.waitUntil(
+    caches.open(CACHE_NAME)
+      .then((cache) => cache.addAll(urlsToCache))
   );
 });
 
-self.addEventListener('fetch', e => {
-  e.respondWith(
-    caches.match(e.request).then(response => response || fetch(e.request))
+self.addEventListener("fetch", (event) => {
+  event.respondWith(
+    caches.match(event.request)
+      .then((response) => response || fetch(event.request))
   );
 });
