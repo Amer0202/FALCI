@@ -6,11 +6,7 @@
   "background_color": "#3b2f2f",
   "theme_color": "#c79b59",
   "icons": [
-    {
-      "src": "assets/icons/fincan.png",
-      "sizes": "192x192",
-      "type": "image/png"
-    },
+    
     {
       "src": "assets/icons/fincan.png",
       "sizes": "512x512",
