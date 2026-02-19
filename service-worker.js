@@ -5,7 +5,7 @@ const urlsToCache = [
   "./script.js",
   "./falParagraflari.js",
   "./assets/icons/fincan.png",
-  "./assets/placeholder.jpg"
+  
 ];
 
 self.addEventListener("install", (event) => {
