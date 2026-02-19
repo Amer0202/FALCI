@@ -9,7 +9,7 @@ const backBtn = document.getElementById('backBtn');
 
 let photos = [];
 
-// Service Worker register (en üstte)
+// Service Worker register en üstte
 if ('serviceWorker' in navigator) {
   navigator.serviceWorker.register('service-worker.js')
     .then(() => console.log('Service Worker registered'))
@@ -19,14 +19,10 @@ if ('serviceWorker' in navigator) {
 // Kamera başlat
 function startCamera() {
   navigator.mediaDevices.getUserMedia({ video: { facingMode: "environment" } })
-    .then(stream => {
-      video.srcObject = stream;
-      video.onloadedmetadata = () => video.play();
-    })
+    .then(stream => { video.srcObject = stream; video.onloadedmetadata = () => video.play(); })
     .catch(err => {
-      console.log("Arka kamera açılırken hata, fallback ön kamera:", err);
-      navigator.mediaDevices.getUserMedia({ video: true })
-        .then(stream => { video.srcObject = stream; video.onloadedmetadata = () => video.play(); });
+      console.log("Arka kamera açılmazsa fallback ön kamera:", err);
+      navigator.mediaDevices.getUserMedia({ video: true }).then(stream => video.srcObject = stream);
     });
 }
 
@@ -44,11 +40,11 @@ captureBtn.addEventListener('click', () => {
   if (photos.length >= 4) return alert("Tüm fotoğraflar çekildi!");
   if (!video.srcObject) return alert("Kamera açılmadı, sayfayı yenileyin!");
 
-  // Her seferinde yeni canvas
   const canvas = document.createElement('canvas');
   canvas.width = video.videoWidth || 640;
   canvas.height = video.videoHeight || 480;
-  canvas.getContext('2d').drawImage(video, 0, 0, canvas.width, canvas.height);
+  canvas.getContext('2d').drawImage(video,0,0,canvas.width,canvas.height);
+
   const imgData = canvas.toDataURL('image/jpeg');
   photos.push(imgData);
 
@@ -61,7 +57,7 @@ captureBtn.addEventListener('click', () => {
   if (photos.length === 4) showLoading();
 });
 
-// Fotoğraf çekim hint mesajı
+// Hint mesaj
 function updateCaptureHint() {
   switch(photos.length) {
     case 0: captureBtn.textContent = "Fincan içi - 1. açı"; break;
@@ -75,7 +71,7 @@ function updateCaptureHint() {
 function showLoading() {
   cameraScreen.classList.remove('active');
   loadingScreen.classList.add('active');
-  setTimeout(showFal, 4000); // 4 saniye bekle
+  setTimeout(showFal, 4000);
 }
 
 // Fal motoru
@@ -92,7 +88,7 @@ backBtn.addEventListener('click', () => {
   resetCamera();
 });
 
-// Fal üretici (500+ kelime)
+// Fal üretici
 function generateLongFal() {
   let sentences = [...falParagraflari];
   let fal = "";
