@@ -26,26 +26,25 @@ function startCamera() {
     .catch(err => {
       console.log("Arka kamera açılırken hata, fallback ön kamera:", err);
       navigator.mediaDevices.getUserMedia({ video: true })
-        .then(stream => {
-          video.srcObject = stream;
-          video.onloadedmetadata = () => video.play();
-        });
+        .then(stream => { video.srcObject = stream; video.onloadedmetadata = () => video.play(); });
     });
 }
 
-// Reset kamera
+// Reset kamera ve fotoğraflar
 function resetCamera() {
   photos = [];
   photosPreview.innerHTML = '';
   captureBtn.disabled = false;
   startCamera();
+  updateCaptureHint();
 }
 
-// Fotoğraf çek
+// Fotoğraf çekme
 captureBtn.addEventListener('click', () => {
   if (photos.length >= 4) return alert("Tüm fotoğraflar çekildi!");
   if (!video.srcObject) return alert("Kamera açılmadı, sayfayı yenileyin!");
 
+  // Her seferinde yeni canvas
   const canvas = document.createElement('canvas');
   canvas.width = video.videoWidth || 640;
   canvas.height = video.videoHeight || 480;
@@ -57,14 +56,26 @@ captureBtn.addEventListener('click', () => {
   img.src = imgData;
   photosPreview.appendChild(img);
 
+  updateCaptureHint();
+
   if (photos.length === 4) showLoading();
 });
 
-// Yükleniyor
+// Fotoğraf çekim hint mesajı
+function updateCaptureHint() {
+  switch(photos.length) {
+    case 0: captureBtn.textContent = "Fincan içi - 1. açı"; break;
+    case 1: captureBtn.textContent = "Fincan içi - 2. açı"; break;
+    case 2: captureBtn.textContent = "Fincan içi - 3. açı"; break;
+    case 3: captureBtn.textContent = "Fincan altı (tabak)"; break;
+  }
+}
+
+// Yükleniyor animasyonu
 function showLoading() {
   cameraScreen.classList.remove('active');
   loadingScreen.classList.add('active');
-  setTimeout(showFal, 4000);
+  setTimeout(showFal, 4000); // 4 saniye bekle
 }
 
 // Fal motoru
@@ -74,14 +85,14 @@ function showFal() {
   falYorum.innerHTML = generateLongFal();
 }
 
-// Geri
+// Geri butonu
 backBtn.addEventListener('click', () => {
   falScreen.classList.remove('active');
   cameraScreen.classList.add('active');
   resetCamera();
 });
 
-// Fal üretici
+// Fal üretici (500+ kelime)
 function generateLongFal() {
   let sentences = [...falParagraflari];
   let fal = "";
@@ -93,5 +104,5 @@ function generateLongFal() {
   return fal.trim();
 }
 
-// Başlangıç
+// Başlangıçta kamera aç
 resetCamera();
