@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Falcı Ana 🔮</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="manifest" href="manifest.json">
+</head>
+<body>
+  <div id="app">
+    <!-- Başlangıç ekranı -->
+    <div id="start-screen" class="screen active">
+      <img src="assets/icon.png" alt="Falcı Ana" class="logo">
+      <h1>Falcı Ana 🔮</h1>
+      <p>Niyetini tut… Fincan enerjisini okumaya başlıyoruz</p>
+      <button id="start-btn">Fal Ritüelini Başlat</button>
+    </div>
+
+    <!-- Foto çekme ekranı -->
+    <div id="photo-screen" class="screen">
+      <h2>Fincanı Çek</h2>
+      <p id="photo-instruction">Fincanı üstten çek</p>
+      <video id="camera" autoplay playsinline></video>
+      <button id="capture-btn">Fotoğraf Çek</button>
+      <div id="previews"></div>
+    </div>
+
+    <!-- Yükleniyor animasyonu -->
+    <div id="loading-screen" class="screen">
+      <h2>Fal Analiz Ediliyor...</h2>
+      <div class="spinner"></div>
+      <p>Telveler inceleniyor… Semboller çözümleniyor… Ruh enerjisi okunuyor…</p>
+    </div>
+
+    <!-- Fal sonucu ekranı -->
+    <div id="result-screen" class="screen">
+      <h2>Falcı Ana 🔮</h2>
+      <p id="final-fal"></p>
+      <button id="new-fal-btn">Yeni Fal</button>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
