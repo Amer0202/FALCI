@@ -2,7 +2,6 @@ const cameraScreen = document.getElementById('cameraScreen');
 const loadingScreen = document.getElementById('loadingScreen');
 const falScreen = document.getElementById('falScreen');
 const video = document.getElementById('video');
-
 const captureBtn = document.getElementById('captureBtn');
 const photosPreview = document.getElementById('photosPreview');
 const falYorum = document.getElementById('falYorum');
@@ -10,7 +9,7 @@ const backBtn = document.getElementById('backBtn');
 
 let photos = [];
 
-// Service Worker register
+// Service Worker register (en üstte)
 if ('serviceWorker' in navigator) {
   navigator.serviceWorker.register('service-worker.js')
     .then(() => console.log('Service Worker registered'))
@@ -19,23 +18,19 @@ if ('serviceWorker' in navigator) {
 
 // Kamera başlat
 function startCamera() {
-  // Arka kamera öncelikli
-  navigator.mediaDevices.getUserMedia({
-    video: { facingMode: "environment" } // environment = arka kamera
-  })
-  .then(stream => {
-    video.srcObject = stream;
-    video.play();
-  })
-  .catch(err => {
-    console.log("Arka kamera açılırken hata:", err);
-    // Fallback: ön kamera
-    navigator.mediaDevices.getUserMedia({ video: true })
-      .then(stream => {
-        video.srcObject = stream;
-        video.play();
-      });
-  });
+  navigator.mediaDevices.getUserMedia({ video: { facingMode: "environment" } })
+    .then(stream => {
+      video.srcObject = stream;
+      video.onloadedmetadata = () => video.play();
+    })
+    .catch(err => {
+      console.log("Arka kamera açılırken hata, fallback ön kamera:", err);
+      navigator.mediaDevices.getUserMedia({ video: true })
+        .then(stream => {
+          video.srcObject = stream;
+          video.onloadedmetadata = () => video.play();
+        });
+    });
 }
 
 // Reset kamera
@@ -49,23 +44,27 @@ function resetCamera() {
 // Fotoğraf çek
 captureBtn.addEventListener('click', () => {
   if (photos.length >= 4) return alert("Tüm fotoğraflar çekildi!");
+  if (!video.srcObject) return alert("Kamera açılmadı, sayfayı yenileyin!");
+
   const canvas = document.createElement('canvas');
-  canvas.width = video.videoWidth;
-  canvas.height = video.videoHeight;
-  canvas.getContext('2d').drawImage(video,0,0);
+  canvas.width = video.videoWidth || 640;
+  canvas.height = video.videoHeight || 480;
+  canvas.getContext('2d').drawImage(video, 0, 0, canvas.width, canvas.height);
   const imgData = canvas.toDataURL('image/jpeg');
   photos.push(imgData);
+
   const img = document.createElement('img');
   img.src = imgData;
   photosPreview.appendChild(img);
+
   if (photos.length === 4) showLoading();
 });
 
-// Yükleniyor animasyonu
+// Yükleniyor
 function showLoading() {
   cameraScreen.classList.remove('active');
   loadingScreen.classList.add('active');
-  setTimeout(() => showFal(), 4000);
+  setTimeout(showFal, 4000);
 }
 
 // Fal motoru
@@ -75,7 +74,7 @@ function showFal() {
   falYorum.innerHTML = generateLongFal();
 }
 
-// Geri butonu
+// Geri
 backBtn.addEventListener('click', () => {
   falScreen.classList.remove('active');
   cameraScreen.classList.add('active');
@@ -94,5 +93,5 @@ function generateLongFal() {
   return fal.trim();
 }
 
-// Sayfa açıldığında kamera başlat
+// Başlangıç
 resetCamera();
