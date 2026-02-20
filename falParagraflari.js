@@ -1,55 +1,64 @@
-const falParagraflari = [
-"Sebiha, fincanındaki telve yoğun ve karmaşık bir şekilde dağılmış. Önümüzdeki günlerde beklenmedik sürprizlerle karşılaşabilirsin. Sağlık açısından küçük uyarılar var; kendine dikkat etmeni öneririm. Fincan kenarındaki dairesel şekiller, maddi fırsatların kapını çalacağını işaret ediyor. Telvede görünen ince zikzaklar, iş ve özel hayatında sabır ve dikkat gerektiren olaylara delalet ediyor.",
-"Fincandaki ışık ve gölge oyunları, ruhsal olarak güçlü kalmanı ve çevrendeki ilişkilerde dengeli olmanı öneriyor. Telvede beliren küçük halkalar, yaratıcı yeteneklerinin ortaya çıkacağına ve yeni fırsatlarla karşılaşacağına işaret ediyor. Fincan tabanındaki yoğun telve, önümüzdeki günlerde keyifli sürprizler yaşayacağını gösteriyor.",
-"Telvede görülen uzun çizgiler, sağlık ve enerji konularında dikkatli olman gerektiğini anlatıyor. Fincandaki küçük noktalar, sosyal ilişkilerinde keyifli gelişmeler olacağını söylüyor. Karmaşık şekiller, ruhsal olarak kendini güçlendirecek deneyimler yaşayacağını gösteriyor. Telvedeki yoğun bölgeler, geçmişte beklediğin bazı konuların çözülmeye başlayacağını gösteriyor.",
-"Fincan kenarındaki zigzag çizgiler, iş ve aile hayatında sabır ve planlama gerektiren durumları anlatıyor. Telvede görülen boşluklar, ufak ama önemli uyarılar içeriyor. Telvede beliren ışık oyunları, hayatındaki belirsizliklerin aydınlanacağını ve önümüzdeki günlerde önemli kararlar alacağını gösteriyor. Bu dönemde dikkatli olmak ve küçük detaylara önem vermek sana avantaj sağlayacak.",
-"Sebiha, bugünkü fincanında yoğun telve var; önümüzdeki günlerde hem sevdiklerinle hem de kendi iç huzurunla ilgili sürpriz gelişmeler olacak. Telvede küçük daireler ve çizgiler, olumlu haberler ve keyifli sürprizler alacağını işaret ediyor. Fincan altındaki yoğun bölgeler, sağlık ve enerji konularında önemli mesajlar içeriyor. Telvede görünen şekiller, hem iş hem aile hayatında dikkatli olmanı öneriyor.",
-"Telvede beliren ince çizgiler, sabır ve planlama gerektiren durumları anlatıyor. Fincan içindeki küçük noktalar, maddi ve manevi fırsatların kapını çalacağını gösteriyor. Telvede görünen karmaşık şekiller, ruhsal olarak dengede kalman gerektiğini işaret ediyor. Fincan tabanındaki yoğun telve, önümüzdeki günlerde olumlu sürprizler yaşayacağını anlatıyor.",
-"Sebiha, fincanındaki yoğun telve önümüzdeki günlerde beklenmedik sürprizlerin olacağını söylüyor. Aile hayatında bazı küçük ama önemli değişiklikler seni mutlu edecek. Sağlık için ufak uyarılar var; kendine dikkat etmelisin.",
-"Fincan kenarındaki dairesel şekiller, maddi fırsatların kapını çalacağını gösteriyor. Telvede ince zikzaklar, iş ve özel hayatında sabır ve dikkat gerektiren olaylara delalet ediyor.",
-"Telvede beliren ışık ve gölge oyunları, ruhsal olarak güçlü kalmanı ve çevrendeki ilişkilerde dengeli olmanı öneriyor. Yakın zamanda küçük ama anlamlı mutluluklar yaşayabilirsin.",
-"Fincan tabanındaki yoğun telve, önümüzdeki günlerde keyifli sürprizler yaşayacağını işaret ediyor. Küçük detaylara dikkat etmek hem sağlık hem maddi konularda avantaj sağlayacak.",
-"Sebiha, bugünkü fincanında karmaşık ama anlamlı şekiller var; hayatında beklenmedik ama olumlu değişiklikler olacak. Sevdiklerinle ilişkilerde anlayış ve sabır ön planda olacak.",
-"Telvede görülen küçük halkalar, yeni yeteneklerinin ortaya çıkacağına ve yaratıcı fırsatlarla karşılaşacağına işaret ediyor. Fincan içindeki ince çizgiler, sabır ve planlama gerektiren olaylara hazırlıklı olmanı söylüyor.",
-"Fincan kenarında beliren küçük noktalar, sosyal ilişkilerinde keyifli gelişmeler yaşayacağını gösteriyor. Telvedeki uzun çizgiler ise sağlık ve enerji konularında dikkat etmeni anlatıyor.",
-"Fincandaki yoğun bölgeler, geçmişte beklediğin bazı kararların önümüzdeki günlerde şekilleneceğini ve ruhsal olarak kendini güçlendireceğini gösteriyor.",
-"Telvede beliren küçük zikzaklar, hayatında kısa süreli ama anlamlı değişimlerin olacağını anlatıyor. Bu süreçte dikkat ve sabır en önemli rehberin olacak.",
-"Fincandaki dairesel ve çizgisel şekiller, hem iş hem aile hayatında olumlu sürprizler yaşamanı gösterecek. Telvede görünen boşluklar ise ufak ama önemli uyarılar içeriyor.",
-"Telvede görülen karmaşık şekiller, yakın gelecekte sana hem keyif hem de dikkat gerektiren durumlar getirecek. Ailenle ve yakın çevrenle ilgili güzel sürprizler olabilir.",
-"Fincan kenarındaki zigzag çizgiler, iş ve aile hayatında planlama ve sabır gerektiren durumları anlatıyor. Telvede küçük ışık oyunları, ruhsal olarak dengede kalmanı öneriyor.",
-"Sebiha, bugünkü telvede beliren dairesel şekiller, yeni insanlarla tanışacağını ve sosyal ilişkilerinde olumlu gelişmeler yaşayacağını gösteriyor.",
-"Telvede görülen yoğun çizgiler, geçmişten gelen bazı konuların çözülmeye başlayacağını ve iç huzurunun artacağını işaret ediyor.",
-"Fincandaki küçük noktalar, sağlık ve enerji konularında ufak uyarılar içeriyor. Önümüzdeki günlerde küçük değişiklikler hayatını olumlu etkileyecek.",
-"Telvede beliren halkalar, yaratıcı fikirlerin ortaya çıkacağı ve keyifli projelerle ilgilenebileceğini söylüyor.",
-"Fincandaki karmaşık şekiller, sabır ve dikkat gerektiren olaylar için olumlu işaretler veriyor. Yakın zamanda sürpriz gelişmeler olabilir.",
-"Telvede görünen küçük ışık oyunları, ruhsal olarak kendini güçlendirecek ve önümüzdeki günlerde beklenmedik mutluluklar getirecek.",
-"Fincan tabanındaki yoğun telve, hem aile hem iş hayatında beklenmedik olumlu gelişmeler yaşanacağını gösteriyor.",
-"Telvede görülen dairesel ve çizgisel şekiller, sabır ve planlama gerektiren durumlar için sana mesaj veriyor.",
-"Fincandaki küçük noktalar, maddi fırsatların kapını çalacağını ve hayatındaki önemli kararları etkileyebileceğini işaret ediyor.",
-"Telvede beliren yoğun çizgiler, sağlık ve enerji konularında dikkat etmen gerektiğini anlatıyor. Yakın zamanda keyifli sürprizler alabilirsin.",
-"Fincan kenarındaki zikzaklar, iş ve özel hayatında sabır ve dikkat gerektiren durumları anlatıyor. Küçük detaylara özen göstermek avantaj sağlar.",
-"Telvede küçük halkalar ve ışık oyunları, ruhsal olarak güçlü kalmanı ve çevrendeki ilişkilerde dikkatli olmanı öneriyor.",
-"Fincandaki karmaşık şekiller, önümüzdeki günlerde beklenmedik ama keyifli sürprizler olacağını gösteriyor.",
-"Telvede görülen küçük daireler, sosyal ilişkilerinde ve aile hayatında güzel gelişmeler yaşayacağını işaret ediyor.",
-"Fincan tabanındaki yoğun telve, geçmişte beklediğin bazı olayların çözüleceğine ve iç huzurunun artacağına delalet ediyor.",
-"Telvede beliren ince çizgiler, sabır ve planlama gerektiren durumları anlatıyor. Yakın zamanda sürpriz mutluluklar olabilir.",
-"Fincandaki dairesel ve küçük noktalar, hem maddi hem ruhsal olarak avantaj sağlayacak gelişmeleri işaret ediyor.",
-"Telvede görülen karmaşık şekiller, hayatında kısa süreli ama anlamlı değişimlerin olacağını söylüyor.",
-"Fincan kenarındaki zigzag çizgiler, iş ve aile hayatında dikkatli olmanı öneriyor. Telvede görünen boşluklar küçük ama önemli uyarılar içeriyor.",
-"Telvede küçük ışık oyunları, ruhsal olarak dengede kalman gerektiğini ve önümüzdeki günlerde olumlu gelişmeler yaşayacağını gösteriyor.",
-"Fincandaki yoğun telve, yakın zamanda keyifli sürprizler ve olumlu gelişmeler getirecek.",
-"Telvede beliren halkalar, yaratıcı fikirlerin ortaya çıkacağını ve yeni projelerle ilgilenebileceğini işaret ediyor.",
-"Fincandaki karmaşık çizgiler, sabır ve planlama gerektiren durumlar için olumlu işaretler veriyor. Önümüzdeki günlerde güzel sürprizler olabilir.",
-"Telvede görülen küçük daireler ve noktalar, sosyal ilişkilerinde ve aile hayatında beklenmedik ama hoş gelişmeler yaşayacağını anlatıyor.",
-"Fincan tabanındaki yoğun telve, hem ruhsal hem de maddi konularda ufak ama önemli uyarılar içeriyor.",
-"Telvede görülen ışık ve gölge oyunları, hayatındaki belirsizliklerin aydınlanacağını ve önemli kararlar alacağını gösteriyor.",
-"Fincandaki küçük noktalar ve çizgiler, önümüzdeki günlerde hem keyifli hem de dikkat gerektiren gelişmeler yaşayacağını işaret ediyor.",
-"Telvede beliren yoğun çizgiler, sağlık ve enerji konularında dikkat etmeni anlatıyor. Küçük sürprizler seni mutlu edebilir.",
-"Fincan kenarındaki zigzag ve dairesel şekiller, iş ve özel hayatında sabır ve dikkat gerektiren durumlar için mesaj veriyor.",
- "Kahve fincanında beliren şekiller, önümüzdeki günlerde önemli bir fırsatın kapıda olduğunu gösteriyor...",
-  "Sağlık konusunda dikkatli olman gereken bir dönemdesin; özellikle beslenmene ve uyku düzenine önem ver...",
-  "Ailenle ilgili bazı gizli gelişmeler ortaya çıkabilir, sabırlı ol ve her şeyi sakin karşıla...",
-  "Maddi konularda sürpriz kazançlar söz konusu; acele kararlar yerine planlı hareket etmen faydalı...",
-  "İlişkilerinde daha çok empati ve anlayış ön planda olacak, karşılıklı konuşmalar önemli rol oynayacak...",
-  "Yakın bir arkadaşın beklenmedik bir destek sunabilir, sürpriz teklif veya davetlere açık ol...",
-];
+const falHavuzu = {
+  saglik: [
+    "Sebiha, son günlerde enerjisi düşük hissedebilir ama 3 vakte kadar toparlanacak.",
+    "Küçük rahatsızlıklar geçici, eklemlerine ve sindirimine dikkat etmelisin.",
+    "Beslenmende sağlıklı seçimler yap, mevsim sebzeleri ve meyveler faydalı olacak.",
+    "Uyku düzenine özen göster, dinlenmeye yeterince zaman ayır.",
+    "Stresini azaltacak ufak yürüyüşler ve hafif egzersizler moralini yükseltecek.",
+    "Göz ve baş ağrıları olabilir, gözlerini dinlendirmek iyi gelecek.",
+    "Enerji seviyen düşebilir ama sabırlı olursan toparlanacak.",
+    "Vitamin ve mineral eksikliklerine dikkat et, küçük takviyeler yardımcı olacak."
+  ],
+  para: [
+    "Fincanda beliren altın kesesi, önümüzdeki günlerde maddi olarak rahatlayacağını gösteriyor.",
+    "Küçük harcamalara dikkat etmelisin, sabırlı ve dikkatli hareket etmek finansal istikrarı sağlayacak.",
+    "Borçların azalacak, küçük ödemeleri takip edersen önünü görebileceksin.",
+    "Yakın zamanda beklenmedik bir gelir kapısı açılabilir.",
+    "Ev ekonomisinde ufak sürprizler seni mutlu edecek.",
+    "Fincandaki para sembolü, önümüzdeki günlerde gelir akışının artacağını gösteriyor."
+  ],
+  evHayati: [
+    "Oğlun evdeki düzeni seviyor ve yanında güvenle büyüyor.",
+    "Eşinle arandaki ufak pürüzler kısa sürede çözülecek.",
+    "Ev işlerinde gösterdiğin titizlik, ailenin güvenini artırıyor.",
+    "Fincandaki çiçek tarlası sembolü, evde huzurlu bir dönem yaşayacağını gösteriyor.",
+    "Aile içindeki sohbet ve paylaşımlar moralini yükseltecek.",
+    "Ev ortamında ufak dekor değişiklikleri iyi gelecek ve enerji akışını artıracak."
+  ],
+  nazar: [
+    "Fincanda beliren nazar boncuğu, küçük aksiliklerden korunduğunu gösteriyor.",
+    "Kırmızı kurdele sembolü, negatif enerjilerden uzak duracağını işaret ediyor.",
+    "Spiritüel semboller evini ve sevdiklerini korumana işaret ediyor.",
+    "Ufak tedirginlikler olabilir ama 3 vakte kadar her şey düzelecek.",
+    "Koruyucu semboller, moralini yükseltecek ve huzur verecek."
+  ],
+  surprizler: [
+    "Sabırlı olursan emeklerin karşılıksız kalmayacak, ufak sürprizler kapını çalacak.",
+    "Fincandaki yol figürü, yeni fırsatlara işaret ediyor.",
+    "Önümüzdeki günlerde beklenmedik güzellikler seni mutlu edecek.",
+    "Pozitif düşün ve moralini yüksek tut, güzel gelişmeler seni bekliyor.",
+    "Huzurlu günler kapını çalacak, ufak sevinçler hayatına renk katacak."
+  ]
+};
+
+function rastgeleCümle(seçenekler) {
+  return seçenekler[Math.floor(Math.random() * seçenekler.length)];
+}
+
+function falUret() {
+  const saglikCümleleri = [];
+  const paraCümleleri = [];
+  const evCümleleri = [];
+  const nazarCümleleri = [];
+  const surprizCümleleri = [];
+
+  for (let i = 0; i < 3; i++) {
+    saglikCümleleri.push(rastgeleCümle(falHavuzu.saglik));
+    paraCümleleri.push(rastgeleCümle(falHavuzu.para));
+    evCümleleri.push(rastgeleCümle(falHavuzu.evHayati));
+    nazarCümleleri.push(rastgeleCümle(falHavuzu.nazar));
+    surprizCümleleri.push(rastgeleCümle(falHavuzu.surprizler));
+  }
+
+  return [...saglikCümleleri, ...paraCümleleri, ...evCümleleri, ...nazarCümleleri, ...surprizCümleleri].join(" ");
+}
