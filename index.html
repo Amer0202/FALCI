@@ -1,42 +1,33 @@
 <!DOCTYPE html>
 <html lang="tr">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Kahve Falı - Sebiha</title>
-<link rel="stylesheet" href="style.css">
-<link rel="manifest" href="manifest.json">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sebiha Kahve Falı</title>
+  <link rel="manifest" href="manifest.json">
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
+  <div class="app-container">
+    <h1>Sebiha Kahve Falı</h1>
 
-<div id="app">
-
-  <!-- Kamera / Fotoğraf Bölümü -->
-  <div id="cameraScreen" class="screen active">
-    <h2>Sebiha, fincanını çek!</h2>
-    <div class="video-container">
-      <video id="video" autoplay playsinline></video>
+    <div id="kamera-container">
+      <video id="video" autoplay></video>
+      <button id="foto-cek">Fotoğraf Çek</button>
     </div>
-    <button id="captureBtn">Fincan içi - 1. açı</button>
-    <div id="photosPreview"></div>
+
+    <div id="fotolar-container"></div>
+
+    <button id="fal-olustur" disabled>Falımı Gönder</button>
+
+    <div id="fal-animasyon" style="display:none;">
+      <p>Falınız yükleniyor...</p>
+    </div>
+
+    <div id="fal-sonuc" style="display:none;"></div>
   </div>
 
-  <!-- Yükleniyor Animasyonu -->
-  <div id="loadingScreen" class="screen">
-    <h2>Falın yükleniyor...</h2>
-    <div class="loader"></div>
-  </div>
-
-  <!-- Fal Sonucu -->
-  <div id="falScreen" class="screen">
-    <h2><img src="assets/icons/fincan.png" alt="Fincan İkonu" class="fincan-icon"> Falın</h2>
-    <div id="falYorum"></div>
-    <button id="backBtn">Geri</button>
-  </div>
-
-</div>
-
-<script src="falParagraflari.js"></script>
-<script src="script.js"></script>
+  <script src="falParagraflari.js"></script>
+  <script src="script.js"></script>
 </body>
 </html>
