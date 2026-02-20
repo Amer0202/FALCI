@@ -1,39 +1,45 @@
-body, html {
-  margin:0;
-  padding:0;
-  font-family: 'Segoe UI', sans-serif;
-  background: #3b2f2f;
-  color: #fff;
-  height: 100%;
-  overflow: hidden;
+body {
+  font-family: sans-serif;
+  background: #f8f4f0;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 20px;
 }
 
-.screen { display: none; flex-direction: column; justify-content: center; align-items: center; height: 100%; padding: 10px; }
-.screen.active { display: flex; }
+.app-container {
+  width: 100%;
+  max-width: 400px;
+}
 
-h2 { margin-bottom: 20px; text-align:center; display:flex; align-items:center; gap:10px; }
+#video {
+  width: 100%;
+  border-radius: 10px;
+}
 
 button {
-  padding: 12px 25px;
-  margin:10px;
-  border:none;
-  border-radius:12px;
-  background: linear-gradient(45deg,#c79b59,#ffd97d);
-  color:#fff;
-  font-size:16px;
-  cursor:pointer;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.4);
-  transition: transform 0.2s;
+  margin-top: 10px;
+  padding: 10px 20px;
+  background: #a67c52;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
 }
-button:hover { transform: scale(1.05); }
 
-#photosPreview img { width: 80px; height: 80px; margin:5px; border-radius:8px; object-fit: cover; border: 2px solid #c79b59; box-shadow: 0 2px 4px rgba(0,0,0,0.5); }
+#fotolar-container img {
+  width: 80px;
+  height: 80px;
+  margin: 5px;
+  border-radius: 5px;
+  object-fit: cover;
+}
 
-#falYorum { max-height: 60vh; overflow-y: auto; padding: 15px; line-height:1.7; font-size:16px; border: 2px solid #c79b59; border-radius: 12px; background: rgba(0,0,0,0.25); box-shadow: inset 0 0 10px rgba(0,0,0,0.3); }
-
-.loader { border: 8px solid #f3f3f3; border-top: 8px solid #c79b59; border-radius: 50%; width: 70px; height: 70px; animation: spin 1s linear infinite; margin-top: 20px; }
-@keyframes spin { 100% { transform: rotate(360deg); } }
-
-.video-container { position: relative; width: 100%; max-width: 400px; height: 300px; }
-#video { position: absolute; top:0; left:0; width:100%; height:100%; object-fit:cover; }
-.fincan-icon { width: 35px; height: 35px; }
+#fal-sonuc {
+  margin-top: 20px;
+  background: #fff3e0;
+  padding: 15px;
+  border-radius: 10px;
+  max-height: 400px;
+  overflow-y: auto;
+}
