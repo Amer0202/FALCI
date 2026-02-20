@@ -3,7 +3,9 @@ const fotoBtn = document.getElementById("foto-cek");
 const fotolarContainer = document.getElementById("fotolar-container");
 const falBtn = document.getElementById("fal-olustur");
 const falAnimasyon = document.getElementById("fal-animasyon");
-const falSonuc = document.getElementById("fal-sonuc");
+const falModal = document.getElementById("fal-modal");
+const falIcerik = document.getElementById("fal-icerik");
+const kapatFal = document.getElementById("kapat-fal");
 
 let cekilenFotolar = [];
 
@@ -31,11 +33,15 @@ fotoBtn.addEventListener("click", () => {
 // Fal üret
 falBtn.addEventListener("click", () => {
   falAnimasyon.style.display = "block";
-  falSonuc.style.display = "none";
+  falModal.style.display = "none";
 
   setTimeout(() => {
     falAnimasyon.style.display = "none";
-    falSonuc.style.display = "block";
-    falSonuc.textContent = falUret();
-  }, 5000); // 5 saniye bekleme animasyonu
+    falModal.style.display = "flex";
+    falIcerik.textContent = falUret();
+  }, 5000);
+});
+
+kapatFal.addEventListener("click", () => {
+  falModal.style.display = "none";
 });
