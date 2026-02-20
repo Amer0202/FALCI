@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Fal Sonucu</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="app-container">
+  <h1>Sebiha Kahve Falı</h1>
+  <div id="fal-sonuc">
+    <p id="fal-icerik"></p>
+  </div>
+  <button onclick="window.location.href='index.html'">Geri Dön</button>
+</div>
+
+<script>
+  const falIcerik = document.getElementById("fal-icerik");
+  falIcerik.textContent = localStorage.getItem("falParagrafi") || "Fal yüklenemedi.";
+</script>
+</body>
+</html>
