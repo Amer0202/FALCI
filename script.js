@@ -3,7 +3,6 @@ const fotoBtn = document.getElementById("foto-cek");
 const fotolarContainer = document.getElementById("fotolar-container");
 const falBtn = document.getElementById("fal-olustur");
 
-// Fotoğrafları ayrı kaydetmek için
 let cekilenFotolar = [];
 
 // Kamera başlat
@@ -24,11 +23,10 @@ fotoBtn.addEventListener("click", () => {
   img.src = dataURL;
   fotolarContainer.appendChild(img);
 
-  // 3+1 fotoğraf tamamlanınca fal butonunu aktif et
   if (cekilenFotolar.length >= 4) falBtn.disabled = false;
 });
 
-// Fal üret ve ayrı sayfaya yönlendir
+// Fal üret ve yeni sayfaya yönlendir
 falBtn.addEventListener("click", () => {
   localStorage.setItem("falParagrafi", falUret());
   window.location.href = "fal-sonuc.html"; // eskiden olduğu gibi ayrı sayfa
