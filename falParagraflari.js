@@ -18,8 +18,8 @@ const falHavuzu = {
     "Fincandaki para sembolü, önümüzdeki günlerde gelir akışının artacağını gösteriyor."
   ],
   evHayati: [
-    "Oğlun evdeki düzeni seviyor ve yanında güvenle büyüyor.",
-    "Eşinle arandaki ufak pürüzler kısa sürede çözülecek.",
+    "Hanende biraz daha sakin olursan her şey düzelecek, aile içindeki gerginlikler azalacak.Hanene huzur gelecek.",
+    "Eşinle arandaki ufak pürüzler senin anlayışlı davranışlarınla kısa sürede çözülecek.",
     "Ev işlerinde gösterdiğin titizlik, ailenin güvenini artırıyor.",
     "Fincandaki çiçek tarlası sembolü, evde huzurlu bir dönem yaşayacağını gösteriyor.",
     "Aile içindeki sohbet ve paylaşımlar moralini yükseltecek.",
