@@ -2,11 +2,8 @@ const video = document.getElementById("video");
 const fotoBtn = document.getElementById("foto-cek");
 const fotolarContainer = document.getElementById("fotolar-container");
 const falBtn = document.getElementById("fal-olustur");
-const falAnimasyon = document.getElementById("fal-animasyon");
-const falModal = document.getElementById("fal-modal");
-const falIcerik = document.getElementById("fal-icerik");
-const kapatFal = document.getElementById("kapat-fal");
 
+// Fotoğrafları ayrı kaydetmek için
 let cekilenFotolar = [];
 
 // Kamera başlat
@@ -27,21 +24,12 @@ fotoBtn.addEventListener("click", () => {
   img.src = dataURL;
   fotolarContainer.appendChild(img);
 
+  // 3+1 fotoğraf tamamlanınca fal butonunu aktif et
   if (cekilenFotolar.length >= 4) falBtn.disabled = false;
 });
 
-// Fal üret
+// Fal üret ve ayrı sayfaya yönlendir
 falBtn.addEventListener("click", () => {
-  falAnimasyon.style.display = "block";
-  falModal.style.display = "none";
-
-  setTimeout(() => {
-    falAnimasyon.style.display = "none";
-    falModal.style.display = "flex";
-    falIcerik.textContent = falUret();
-  }, 5000);
-});
-
-kapatFal.addEventListener("click", () => {
-  falModal.style.display = "none";
+  localStorage.setItem("falParagrafi", falUret());
+  window.location.href = "fal-sonuc.html"; // eskiden olduğu gibi ayrı sayfa
 });
