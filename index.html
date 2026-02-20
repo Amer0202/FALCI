@@ -13,18 +13,21 @@
 
     <div id="kamera-container">
       <video id="video" autoplay></video>
+      <div id="odak-rehberi"></div>
       <button id="foto-cek">Fotoğraf Çek</button>
     </div>
 
     <div id="fotolar-container"></div>
-
     <button id="fal-olustur" disabled>Falımı Gönder</button>
 
     <div id="fal-animasyon" style="display:none;">
       <p>Falınız yükleniyor...</p>
     </div>
 
-    <div id="fal-sonuc" style="display:none;"></div>
+    <div id="fal-modal" style="display:none;">
+      <div id="fal-icerik"></div>
+      <button id="kapat-fal">Kapat</button>
+    </div>
   </div>
 
   <script src="falParagraflari.js"></script>
