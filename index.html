@@ -1,36 +1,32 @@
 <!DOCTYPE html>
 <html lang="tr">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Sebiha Kahve Falı</title>
-  <link rel="manifest" href="manifest.json">
-  <link rel="stylesheet" href="style.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sebiha Kahve Falı</title>
+<link rel="manifest" href="manifest.json">
+<link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <div class="app-container">
-    <h1>Sebiha Kahve Falı</h1>
+<div class="app-container">
+  <h1>Sebiha Kahve Falı</h1>
 
-    <div id="kamera-container">
-      <video id="video" autoplay></video>
-      <div id="odak-rehberi"></div>
-      <button id="foto-cek">Fotoğraf Çek</button>
-    </div>
-
-    <div id="fotolar-container"></div>
-    <button id="fal-olustur" disabled>Falımı Gönder</button>
-
-    <div id="fal-animasyon" style="display:none;">
-      <p>Falınız yükleniyor...</p>
-    </div>
-
-    <div id="fal-modal" style="display:none;">
-      <div id="fal-icerik"></div>
-      <button id="kapat-fal">Kapat</button>
-    </div>
+  <div id="kamera-container">
+    <video id="video" autoplay playsinline></video>
+    <div id="odak-rehberi"></div>
+    <button id="foto-cek">Fotoğraf Çek</button>
   </div>
 
-  <script src="falParagraflari.js"></script>
-  <script src="script.js"></script>
+  <div id="fotolar-container"></div>
+
+  <button id="fal-olustur" disabled>Falımı Gönder</button>
+
+  <div id="fal-animasyon" style="display:none;">
+    <p>Falınız yükleniyor...</p>
+  </div>
+</div>
 </body>
+
+<script src="falParagraflari.js"></script>
+<script src="script.js"></script>
 </html>
