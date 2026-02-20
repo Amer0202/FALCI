@@ -3,30 +3,21 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Sebiha Kahve Falı</title>
-<link rel="manifest" href="manifest.json">
+<title>Fal Sonucu</title>
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
 <div class="app-container">
   <h1>Sebiha Kahve Falı</h1>
-
-  <div id="kamera-container">
-    <video id="video" autoplay playsinline></video>
-    <div id="odak-rehberi"></div>
-    <button id="foto-cek">Fotoğraf Çek</button>
+  <div id="fal-sonuc">
+    <p id="fal-icerik"></p>
   </div>
-
-  <div id="fotolar-container"></div>
-
-  <button id="fal-olustur" disabled>Falımı Gönder</button>
-
-  <div id="fal-animasyon" style="display:none;">
-    <p>Falınız yükleniyor...</p>
-  </div>
+  <button onclick="window.location.href='index.html'">Geri Dön</button>
 </div>
-</body>
 
-<script src="falParagraflari.js"></script>
-<script src="script.js"></script>
+<script>
+  const falIcerik = document.getElementById("fal-icerik");
+  falIcerik.textContent = localStorage.getItem("falParagrafi") || "Fal yüklenemedi.";
+</script>
+</body>
 </html>
